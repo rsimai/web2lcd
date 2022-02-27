@@ -1,5 +1,5 @@
-POST data to 4x20 LCD display within WLAN
-=========================================
+GET/POST data to 4x20 LCD display within WLAN
+=============================================
 
 ### ESP-32 to bridge clients from local WLAN to a HD44780 compatible display
 
@@ -29,10 +29,14 @@ Available commands:
 | y         | 0-3     | cursor y position          |
 
 
-### curl example
-
+### curl POST example
 ```
 curl -d "c=clear" -d "t=Some text here" -d "x=0" -d "y=1" -d "t=continue here" -d "x=0" -d "y=2" -d "t=third line" -d "x=0" -d "y=3" -d "t=four" -H "Content-Type: application/x-www-form-urlencoded" -X POST http://esp.your.domain/text/
+```
+
+### browser GET example
+```
+http://esp.your.domain/text/?c=clear&t=Text%20first%20line&x=0&y=1&t=continue%20second
 ```
 
 ### build
